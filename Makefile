@@ -37,7 +37,7 @@ $(paper_pdf_file): $(paper_sources) $(graphics_for_paper) Makefile
 	@echo $$(($$(cat $(paper_counter_file)) + 1)) > $(paper_counter_file)
 	make $(bibtex_file)
 	$(latex_cmd) $(paper_source)
-	bibtex $(paper_target)
+	# bibtex $(paper_target)
 	if (grep "Warning" $(paper_target).blg > /dev/null ) then false; fi
 	while ( \
 		$(latex_cmd) $(paper_target) ; \
